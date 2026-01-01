@@ -1,0 +1,24 @@
+{
+  "name": "yandex_cloud_functions",
+  "version": "1.0.0",
+  "description": "Знакомство с платформой Cloud Functions и возможностями API Gateway",
+  "homepage": "https://github.com/Gronik4/yandex_cloud_functions#readme",
+  "bugs": {
+    "url": "https://github.com/Gronik4/yandex_cloud_functions/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gronik4/yandex_cloud_functions.git"
+  },
+  "license": "ISC",
+  "author": "Gronik4",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "serverless-http": "^4.0.0"
+  }
+}
