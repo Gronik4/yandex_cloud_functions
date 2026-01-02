@@ -1,6 +1,6 @@
-export const characters = [
+const characters = [
   {
-    id: 1,
+    id: '1',
     name: 'Буратино',
     description: 'Деревянный мальчик выструганный папой Карло',
     modified: '01.01.2026',
@@ -17,7 +17,7 @@ export const characters = [
     ]
   },
   {
-    id: 2,
+    id: '2',
     name: 'Пьеро',
     description: 'Персонаж из кукольного театра',
     modified: '01.01.2026',
@@ -34,7 +34,7 @@ export const characters = [
     ]
   },
   {
-    id: 3,
+    id: '3',
     name: 'Дуремар',
     description: 'Продавец пиявок',
     modified: '01.01.2026',
@@ -51,3 +51,5 @@ export const characters = [
     ]
   },
 ];
+
+module.exports = {characters};
