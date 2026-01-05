@@ -7,7 +7,7 @@ const app = express();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.get('/api/character', (req, res) => {
+app.get('/api/characters', (req, res) => {
   res.json(characters)
 });
 
