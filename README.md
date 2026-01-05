@@ -18,11 +18,14 @@
   
 3. В Yandex Cloud создать каталог и в нем создать функцию:  
    а). Точка входа: `<Имя сервера>.handler` в нашем случае: `index.handler` - см пункт 1.в  
-   в). Загрузить zip-архив и проверить работу перейдя по ссылке.   
+   в). Загрузить zip-архив и проверить работу перейдя по ссылке. Ответ: `/? не найдено на этом сервере`.  
 4. Создать API-шлюз: Бессерверные вычисления->API Geteway.  
   a). Документация->Начало работы с Yandex API Gateway -> Концепции->Расширенные спецификации->Интеграции->Cloud Function. Здесь пример спецификации.  
   b). Из примера копируем от `x-yc-apigateway-integration:` включительно и до конца.  
   с). Заменяем соответствующий раздел в нашем шлюзе.  
   d). Заменяем `function_id` - id нашей функции.  
-  e). `tag` и `service_accaunt_id` мщжно удалить, т.к. функция у нас публичная  
-  f). Добавляем все роуты
+  e). `tag` и `service_accaunt_id` можно удалить, т.к. функция у нас публичная  
+  f). Добавляем все роуты  
+  g). Проверяем: `https://d5dtshnfpb2ftqv8gtp5.emzafcgx.apigw.yandexcloud.net/api/characters` - показывает всех персонажей `https://d5dtshnfpb2ftqv8gtp5.emzafcgx.apigw.yandexcloud.net/api/characters/1` - должен показать персонажа с id=1.  
+    
+Проблемы: по адресу:`https://d5dtshnfpb2ftqv8gtp5.emzafcgx.apigw.yandexcloud.net/api/characters/1` - ответ: `/api/characters/1? не найдено на этом сервере`.
