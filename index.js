@@ -13,11 +13,11 @@ app.get('/api/characters', (req, res) => {
 
 app.get('/api/character/:id', (req, res) => {
   const { id } = req.params;
-  const idx = characters.findIndex(el=> el.id === id);
+  const ide = typeof(id) === 'string'? id: String(id);
+  const idx = characters.findIndex(el=> el.id === ide);
   if (idx != -1) {
   res.json({mess: `Персонаж найден`, char: characters[idx]});
   }
   res.json({err: 'Персонаж не найден.'});
 });
-
 module.exports.handler = serverless(app);
