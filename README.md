@@ -28,4 +28,20 @@
   f). Добавляем все роуты  
   g). Проверяем: `https://d5dtshnfpb2ftqv8gtp5.emzafcgx.apigw.yandexcloud.net/api/characters` - показывает всех персонажей `https://d5dtshnfpb2ftqv8gtp5.emzafcgx.apigw.yandexcloud.net/api/characters/1` - должен показать персонажа с id=1.  
     
-Проблемы: по адресу:`https://d5dtshnfpb2ftqv8gtp5.emzafcgx.apigw.yandexcloud.net/api/characters/1` - ответ: `/api/characters/1? не найдено на этом сервере`.
+Проблемы: по адресу:`https://d5dtshnfpb2ftqv8gtp5.emzafcgx.apigw.yandexcloud.net/api/characters/1` - ответ: `/api/characters/1? не найдено на этом сервере`.  
+Решение: В спецификацию, в нужный метод(в нашем случае: `/api/character/:id`), после `get` и до `x-yc-apigateway-integration:`- добавить следующее:  
+```JS
+summary: Get id
+      operationId: getid
+      tags:
+        - example
+      parameters:
+        - name: id
+          in: path
+          description: Return id
+          required: true
+          schema:
+            type: string  
+```    
+В раздел `x-yc-apigateway-integration:` - добавить строку: `payload_format_version: '1.0'`.  
+Проследить, чтобы было именно `1.0`!!!
