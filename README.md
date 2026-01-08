@@ -44,4 +44,5 @@ summary: Get id
             type: string  
 ```    
 В раздел `x-yc-apigateway-integration:` - добавить строку: `payload_format_version: '1.0'`.  
-Проследить, чтобы было именно `1.0`!!!
+Проследить, чтобы было именно `1.0`!!!   
+Пример извлечения path параметров в Expressjs приложении, из официальной документации [здесь](https://nikolaymatrosov.ru/2020-12-13-Run-Express-js-app-in-Yandex-Cloud-Functions/#path-parameters)
